@@ -3,7 +3,7 @@
 * { margin: 0; box-sizing: border-box; }
 
 body {
-    max-width: 9500px;
+    max-width: 950px;
     margin: auto;
     font-size: 16px;
     line-height: 32px;
@@ -43,8 +43,8 @@ header{
 }
 header, footer, footer a {
     text-align: center;
-    background-color: #0f231b;
-    color: #66e29e;
+    background-color: #ab0000;
+    color: #b2b2b2;
 }
 header img{
 	width: 250px;
