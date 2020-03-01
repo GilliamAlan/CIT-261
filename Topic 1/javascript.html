@@ -10,7 +10,7 @@
             <section class="page-header">
                 <h1 class="student"> Alan Gilliam</h1>
                 <h2 class="class">CIT 261 Portal</h2>
-                     <link rel="stylesheet" href="/styles/main.css">
+                     <link rel="stylesheet" href="../styles/main.css">
             </section>
 
 
@@ -59,7 +59,7 @@
                 var count;
 
                 function test() {
-                    var length = parseFloat(document.getElementById("len").value);
+                    var length = parseFloat(document.getElementById("length").value);
                     var array = new Array(length);
                     for (var i = 0; i < array.length; i++) {
                         array[i] = 1 + i * 3;
@@ -70,13 +70,13 @@
                 }
 
                 function countEvens(list) {
-                    var numBer = 0;
+                    var number = 0;
                     for (var i = 0; i < list.length; i++) {
                         if (list[i] == 2 * Math.floor(list[i] / 2)) {
-                            numBer++;
+                            number++;
                         }
                     }
-                    return numBer;
+                    return number;
                 }
             </script>
 
