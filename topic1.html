@@ -1,23 +1,112 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-  <head>
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
     <meta charset="utf-8">
-    <title>JavaScript | CIT 261 Topic</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</title>
+</head>
+
+    <center><body>
+            <section class="page-header">
+                <h1 class="student"> Alan Gilliam</h1>
+                <h2 class="class">CIT 261 Portal</h2>
+                     <link rel="stylesheet" href="/styles/main.css">
+            </section>
 
 
+               <script>
+//wear shoes
 
-    </div> <!-- div id=main close -->
+                function wear() {
+    var weather = document.getElementById("types").value;
+    var shoes;
+    //selection
+    if (weather == "hot") {
+    shoes = "Stay hyrdrated!";
+                    } else if (weather == "rain") {
+                        shoes = "Go jump in a puddle!";
+                    } else if (weather == "snow") {
+                        shoes = "Stay in by the fire, and drink hot cocoa!";
+                    }
+                    else {
+                        shoes = "Type hot, rain or snow";
+                    }
+                    document.getElementById("shoesdiv").innerHTML = shoes;
+                }
+                // for loop
 
-   <div id="footer">
-        <footer>
-          <p> Devin Erickson &copy;2018 <br></p>
-          <p><a href="https://github.com/GilliamAlan/gilliamalan.github.io.git">Alan's Website</a></p>
-        </footer>
-      </div>
-    <script src="scripts/modernizr-custom.js"></script>
-    <script src="scripts/functions.js"></script>
-  </body>
+                function sumOfOdds() {
+
+                    var n = parseFloat(document.getElementById('integer').value);
+
+                    // declare variables. Set skip to count odd numbers only
+                    var skip = 2;
+                    var i = 1;
+                    var sum = 0;
+
+                    // adds all odd integers between 1 and n
+                    for (i = 1; i <= n; i += skip) {
+                        sum += i;
+                        display = "<b><br/>The sum of all of the odd integers between 1 & "
+                                + n + " is " + sum + "."
+                    }
+
+                    // Display the message.
+                    document.getElementById('displayDiv').innerHTML = display;
+                }
+
+                // Arrays
+                var count;
+
+                function test() {
+                    var length = parseFloat(document.getElementById("len").value);
+                    var array = new Array(length);
+                    for (var i = 0; i < array.length; i++) {
+                        array[i] = 1 + i * 3;
+                    }
+                    count = countEvens(array);
+                    var nums = array.slice(0, length);
+                    document.getElementById("result").innerHTML = "There are " + count + " even integers. The tested array is: " + nums + "<br>";
+                }
+
+                function countEvens(list) {
+                    var numBer = 0;
+                    for (var i = 0; i < list.length; i++) {
+                        if (list[i] == 2 * Math.floor(list[i] / 2)) {
+                            numBer++;
+                        }
+                    }
+                    return numBer;
+                }
+            </script>
+
+            <!--if else loop   -->
+
+           What is the weather like outside today? <input type="text" id="types" >
+
+            <button type= "button" onclick= "wear()">Click here</button>
+
+            <div id="shoesdiv"></div><br><br>
+            <!-- for if loop -->
+
+            Pick a number: <input type="text" id="integer">
+            <button type="button" onclick= "sumOfOdds()">Click here</button>
+            <div id="displayDiv"></div>
+
+            <!-- Arrays -->
+
+            <h2>Counting Even Integers</h2>
+            <input type="text" id="len" size="4">
+            <button type="button" onclick="test()">Count</button>
+            <div id="result"></div>
+
+            <script>
+                document.getElementById("Footer").innerHTML = readTextFile("footer.html");
+            </script>
+            <!-- End Footer Include -->
+
+    <footer>
+        <p>&copy;2020 Alan Gilliam | Utah | <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a>    </p>
+    </footer>
+</body>
 </html>
