@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</title>
+</head>
+
+    <center><body>
+            <section class="page-header">
+
+                     <link rel="stylesheet" href="/styles/main.css">
+            </section>
+
+
+<body>
+    <header>
+        <h1>Alan Gilliam</h1>
+    </header>
+    <nav>
+        <a href="https:/gilliamalan.github.io/">Home</a>
+        <a href="/lesson3.html">Next Lesson</a>
+    <script type="text/javascript">
+<!--
+//Object Creation Functions
+
+   function myInfo()
+   {
+   var user = {
+       firstname: "Alan",
+       lastname: "Gilliam",
+       age: 29,
+       occupation: "Real Estate Agent"
+   };
+
+      if ((user.firstname == "Alan" && user.lastname == "Gilliam"))
+      {
+         user.nationality = "African American";
+         var userInfo = user.firstname + " "
+                     + user.lastname + " is "
+                     + user.age + " years old and works as a "
+                     + user.occupation + ". "
+                     + "He is also " + user.nationality + ".";
+         return userInfo;
+      }
+   }
+ //-->
+        </script>
+        <h2>Object Creation <br></h2>
+<h3>Properties</h3>
+<button type="button" onclick="document.getElementById('myinfo').innerHTML = myInfo()")>Click to see my information.</button>
+<p id="myinfo"></p>
+<script>
+
+            <!-- End Footer Include -->
+
+    <footer>
+        <p>&copy;2020 Alan Gilliam | Utah | <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a>    </p>
+    </footer>
+</body>
+</html>

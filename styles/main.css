@@ -6,7 +6,7 @@ body {
     font-size: 16px;
     background-color:floralwhite;
     /* Declare the base font-family - from google font api or other */
-    font-family: 'Patrick Hand', cursive;
+    font-family: 'Patrick Hand';
     font-weight: 300;
 
 }
@@ -22,7 +22,7 @@ header, nav, main, footer { /* the comma means apply the following CSS declarati
 
 header {
     background-color:  #4E5C4B;
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Fredoka One';
     padding: 20px;
     min-width: 375px;
     margin-top: 0px;
