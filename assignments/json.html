@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</title>
+</head>
+
+    <center><body>
+            <section class="page-header">
+
+                     <link rel="stylesheet" href="/styles/main.css">
+            </section>
+
+
+<body>
+    <header>
+        <h1>Alan Gilliam</h1>
+    </header>
+    <nav>
+        <a href="https:/gilliamalan.github.io/">Home</a>
+        <a href="/assignments/javascript_objects.html">Next Lesson</a>
+        <script type="text/javascript">
+        </script>
+
+<html>
+    <head>
+        <title>JSON Parse, Stringify</title>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<script>
+var info = '{"name":"Alan Gilliam", "birth":"17 November 1990","city":"Bronx, NY"}';
+
+//This variable data receives the convert text into JSON format.
+var data = JSON.parse(info);
+data.birth = new Date(data.birth);
+document.getElementById("demo").innerHTML =
+data.name + ", was born on " + data.birth;
+
+//Since functions are not allowed in JSON,
+//we need to write them as string and convert them back later
+var text = '{"name":"Alan Gilliam", "age":"function() {return 29;}", "city":"Bronx"}';
+var obj = JSON.parse(text);
+
+//This converts the string into function
+obj.age = eval("(" + obj.age + ")");
+document.getElementById("demo2").innerHTML =
+obj.name + " is " + obj.age();
+
+//This will convert back the JSON into string
+var information= { name: "Alan", age: 29, city: "Bronx, NY" };
+var conv = JSON.stringify(information);
+document.getElementById("demo3").innerHTML = conv;
+
+</script>
+
+
+
+    <footer>
+        <p>&copy;2020 Alan Gilliam | Utah | <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a>    </p>
+    </footer>
+
