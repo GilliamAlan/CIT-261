@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</title>
+</head>
+
+    <center><body>
+            <section class="page-header">
+
+                     <link rel="stylesheet" href="/styles/main.css">
+            </section>
+
+
+<body>
+    <header>
+        <h1>Alan Gilliam</h1>
+    </header>
+    <nav>
+        <a href="https:/gilliamalan.github.io/">Home</a> <a href="/assignments/javascript.html">Topic1</a>
+        <a href="/assignments/javascript_objects.html">Topic2</a>
+        <a href="/assignments/json.html">Topic3</a>
+        <script type="text/javascript">
+        </script>
+     <h2>Shopping List for The Week</h2>
+ <ul id="shoppingList">
+  <li>Chicken</li>
+  <li>Salad</li>
+  <li>Rolls</li>
+<li>Bananas</li>
+    <li>Oatmeal</li>
+     <li>Apples</li>
+     <li>Milk</li>
+     <li>Rice</li>
+
+</ul>
+
+What dessert do I want for my cheat day?.<br><br>
+<button onclick="dessert()">Add Cookies</button><br><br>
+
+What other meat do we need for the week?<br>
+<br><button onclick="addMeat()">Add item below chicken</button><br><br>
+
+We have 3 frozen bags of chicken in freezer.<br>
+<br><button onclick="removeRolls()">Remove chicken from list</button><br><br>
+
+<script>
+function dessert() {
+  var node = document.createElement("LI");
+     var textnode = document.createTextNode("Cookies");
+  node.appendChild(textnode);
+  document.getElementById("shoppingList").appendChild(node);
+}
+
+function addMeat() {
+  var newItem = document.createElement("LI");
+  var textnode = document.createTextNode("Ground Beef");
+  newItem.appendChild(textnode);
+
+  var list = document.getElementById("shoppingList");
+  list.insertBefore(newItem, list.childNodes[2]);
+}
+
+function removeRolls() {
+  var list = document.getElementById("shoppingList");
+  list.removeChild(list.childNodes[1]);
+}
+</script>

@@ -1,0 +1,83 @@
+  <!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</title>
+</head>
+
+    <center><body>
+            <section class="page-header">
+
+                     <link rel="stylesheet" href="/styles/main.css">
+            </section>
+
+
+<body>
+    <header>
+        <h1>Alan Gilliam</h1>
+    </header>
+    <nav>
+        <a href="https:/gilliamalan.github.io/">Home</a> <a href="/assignments/javascript.html">Topic1</a>
+        <a href="/assignments/javascript_objects.html">Topic2</a>
+        <a href="/assignments/json.html">Topic3</a>
+        <a href="/assignments/ajax.html">Topic4</a>
+        <a href="/assignments/Localstorage.html">Topic5</a>
+    <script type="text/javascript">
+
+        </script>
+
+    <h1>Local Storage</h1>
+        <h3>Pick a Yankee player to view its information:</h3>
+        <select id="players" onChange="change();">
+            <option value="0">- SELECT -</option>
+            <option value="1">Derek Jeter</option>
+            <option value="2">Aaron Judge</option>
+            <option value="3">Babe Ruth</option>
+        </select>
+        <div id="display"></div>
+        <div id="displayChange"></div>
+
+        <script>
+            var DerekJeter = {"Name: ":"Derek Jeter", "Team: ":"New York Yankees", "Born: ":"June 26,1974", "Draft Year: ":"1992"};
+            //local storage
+            store1 = JSON.stringify(DerekJeter);
+            localStorage.setItem("DerekJeter", store1);
+
+            var AaronJudge = {"Name: ":"Aaron Judge", "Team: ":"New York Yankees", "Born: ":"April 26, 1992", "Draft Year: ":"2013"};
+            //local storage
+            store2 = JSON.stringify(AaronJudge);
+            localStorage.setItem("AaronJudge", store2);
+
+            var BabeRuth = {"Name: ":"Babe Ruth", "Team: ":"New York Yankees", "Born: ":"Febuary 6,1895", "Draft Year: ":"1914"};
+            //local storage
+            store3 = JSON.stringify(BabeRuth);
+            localStorage.setItem("BabeRuth", store3);
+
+            function change ()
+            {
+                document.getElementById("display").innerHTML = " ";
+                var selected = document.getElementById("players");
+                var value = selected.options[selected.selectedIndex].value;
+                if (value == "1") {
+                    for (x in DerekJeter) {
+                        document.getElementById("display").innerHTML += x + DerekJeter[x] +"<br>";
+                    }
+                }
+                if (value == "2") {
+                    for (x in AaronJudge) {
+                        document.getElementById("display").innerHTML += x + AaronJudge[x] +"<br>";
+                    }
+                }
+                if (value == "3") {
+                    for (x in BabeRuth) {
+                        document.getElementById("display").innerHTML += x + BabeRuth[x] +"<br>";
+                    }
+                }
+            }
+	</script>
+
+
+    <footer>
+        <p>&copy;2020 Alan Gilliam | Utah | <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a>    </p>
+    </footer>

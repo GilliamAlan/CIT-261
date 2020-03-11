@@ -1,0 +1,69 @@
+   <!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</title>
+</head>
+
+    <center><body>
+            <section class="page-header">
+
+                     <link rel="stylesheet" href="/styles/main.css">
+            </section>
+
+
+<body>
+    <header>
+        <h1>Alan Gilliam</h1>
+    </header>
+    <nav>
+        <a href="https:/gilliamalan.github.io/">Home</a> <a href="/assignments/javascript.html">Topic1</a>
+        <a href="/assignments/javascript_objects.html">Topic2</a>
+        <a href="/assignments/json.html">Topic3</a>
+        <script type="text/javascript">
+
+        </script>
+  <h1>Using AJAX to Consume a JSON Web Service</h1>
+        <div id="States">
+            <button type="button" onclick="getJson()">Get State Information</button>
+        </div>
+            <table id='stateTable'>
+                <tr>
+                    <th align="left">State: </th>
+                    <th align="left">Capital: </th>
+                </tr>
+            </table>
+
+	<script>
+    function getJson()
+    {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var states = [];
+                states = JSON.parse(this.response);
+                var counter = 1;
+                console.log(states);
+                for (p in states)
+                    for(k in states[p]){
+                        var table = document.getElementById('stateTable');
+                        var row = table.insertRow(counter);
+                        var stateCell = row.insertCell(0);
+                        var capCell = row.insertCell(1);
+                        stateCell.innerHTML = k;
+                        capCell.innerHTML = states[p][k];
+                        counter++;
+                    }
+                document.getElementById("States").innerHTML = '';
+            }
+
+        };
+        xhttp.open("GET", "Topic4json.json", true);
+        xhttp.send();
+    }
+	</script>
+
+    <footer>
+        <p>&copy;2020 Alan Gilliam | Utah | <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a>    </p>
+    </footer>
