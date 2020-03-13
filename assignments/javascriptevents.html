@@ -8,17 +8,18 @@
 
     <center><body>
             <section class="page-header">
-
+  <link rel="stylesheet" href="/js/mobile.js">
                      <link rel="stylesheet" href="/styles/main.css">
+                <link rel="stylesheet" href="/styles/mobile.css">
             </section>
-
+   <link rel="stylesheet" href="/js/mobile.js">
 
 <body>
     <header>
         <h1>Alan Gilliam</h1>
     </header>
     <nav>
-             <a href="https:/gilliamalan.github.io/">Home</a>
+        <a href="https:/gilliamalan.github.io/">Home</a>
         <a href="/assignments/javascript.html">Topic1</a>
         <a href="/assignments/javascript_objects.html">Topic2</a>
         <a href="/assignments/json.html">Topic3</a>
@@ -36,51 +37,56 @@
 
         <script type="text/javascript">
         </script>
-     <h2>DOM Manipulation</h2>
-        <h2>Shopping List for The Week</h2>
- <ul id="shoppingList">
-  <li>Chicken</li>
-  <li>Salad</li>
-  <li>Rolls</li>
-<li>Bananas</li>
-    <li>Oatmeal</li>
-     <li>Apples</li>
-     <li>Milk</li>
-     <li>Rice</li>
+  <h1>JavaScript Events</h1>
 
-</ul>
+		<div onmouseover="over(this)" onmouseout="out(this)"
+			 class= "box">
+			Place Cursor Here</div><br>
 
-What dessert do I want for my cheat day?.<br><br>
-<button onclick="dessert()">Add Cookies</button><br><br>
+		<div onclick="click(this)" ondblclick="dclick(this)"
+			 class= "box">
+			Double Click Here!</div><br>
 
-What other meat do we need for the week?<br>
-<br><button onclick="addMeat()">Add item below chicken</button><br><br>
+		<div onmousedown="down(this)" onmouseup="up(this)"
+			 class= "box">
+			Hold Left Mouse Button</div><br>
 
-We have 3 frozen bags of chicken in freezer.<br>
-<br><button onclick="removeRolls()">Remove chicken from list</button><br><br>
+		<script>
+			function over(obj) {
+				obj.style.backgroundColor= "red"
+				obj.innerHTML = "Move the cursor off"
+			}
 
-<script>
-function dessert() {
-  var node = document.createElement("LI");
-     var textnode = document.createTextNode("Cookies");
-  node.appendChild(textnode);
-  document.getElementById("shoppingList").appendChild(node);
-}
+			function out(obj) {
+				obj.style.backgroundColor= "orange"
+				obj.innerHTML = "Put the cursor on me"
+			}
 
-function addMeat() {
-  var newItem = document.createElement("LI");
-  var textnode = document.createTextNode("Ground Beef");
-  newItem.appendChild(textnode);
+			function click(obj) {
+				obj.style.backgroundColor= "darkorange"
+				obj.innerHTML = "Double Click This Line"
+			}
+			function dclick(obj) {
+				obj.style.backgroundColor= "cyan"
+				obj.innerHTML = "I LOVE THE YANKEES"
+			}
+			function down(obj) {
+				obj.style.backgroundColor= "pink"
+				obj.innerHTML = "Release Me"
+			}
 
-  var list = document.getElementById("shoppingList");
-  list.insertBefore(newItem, list.childNodes[2]);
-}
+			function up(obj) {
+				obj.style.backgroundColor= "blue"
+				obj.innerHTML = "Hold"
+			}
+			function load() {
+				alert("Hello! Here are some examples of JavaScript Events")
+			}
 
-function removeRolls() {
-  var list = document.getElementById("shoppingList");
-  list.removeChild(list.childNodes[1]);
-}
-</script>
+
+		</script>
+
+
 
     <footer>
         <p>&copy;2020 Alan Gilliam | Utah | <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a>    </p>
