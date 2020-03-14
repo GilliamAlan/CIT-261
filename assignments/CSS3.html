@@ -41,13 +41,23 @@
         <main>
 		<article>
 		</article>
-        <h3>Example 1 - Change the background color style</h3>
-		<p>Use the picker below to change the background of the page</p>
-		<input type="color" id="myColor" onchange="example1()">
+        <h1 class="head" id="myColor">Change the text color style</h1>
+
+		 <button class="myButton" type="button" onclick="random_bg_color()">Random</button>
+    <button class="myButton" type="button" onclick="resetStyle()">Reset</button>
 		<hr>
+   <script type="text/javascript">
+        function random_bg_color() {
+        var x = Math.floor(Math.random() * 256);
+        var y = Math.floor(Math.random() * 256);
+        var z = Math.floor(Math.random() * 256);
+        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        document.getElementById('myColor').style.color = bgColor;
+        }
 
-
-<script>
+        function resetStyle() {
+        document.getElementById('myColor').style.color = 'black';
+        }
 
 </script>
 
